@@ -33,7 +33,7 @@ namespace BridgePattern
 
         public override void Print()
         {
-            Console.WriteLine($"Essay of {_student} on the subject of {_topic}");
+            Console.WriteLine($"Essay of {_formatter.Format(_student)} on the subject of {_formatter.Format(_topic)}");
             Console.WriteLine(_formatter.Format(_text));
         }
     }
