@@ -4,8 +4,15 @@ using System.Text;
 
 namespace BridgePattern
 {
-    public interface IManuscript
+    public abstract class Manuscript
     {
-        void Print();
+        private IFormatter _formatter;
+
+        protected Manuscript(IFormatter formatter)
+        {
+            _formatter = formatter;
+        }
+
+        public abstract void Print();
     }
 }

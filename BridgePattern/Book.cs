@@ -4,9 +4,15 @@ using System.Text;
 
 namespace BridgePattern
 {
-    public class Book: IManuscript
+    public class Book: Manuscript
     {
         private string _title, _content, _author;
+
+        public Book(IFormatter formatter)
+            : base(formatter)
+        {
+
+        }
 
         public Book SetTitle(string title)
         {
@@ -26,7 +32,7 @@ namespace BridgePattern
             return this;
         }
 
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine($"===== {_title} =====");
             Console.WriteLine($"            by {_author}");

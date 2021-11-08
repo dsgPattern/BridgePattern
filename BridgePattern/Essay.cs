@@ -4,9 +4,13 @@ using System.Text;
 
 namespace BridgePattern
 {
-    public class Essay: IManuscript
+    public class Essay: Manuscript
     {
         private string _student, _topic, _text;
+
+        public Essay(IFormatter formatter)
+            :base(formatter)
+        {}
 
         public Essay SetStudentName(string name)
         {
@@ -27,7 +31,7 @@ namespace BridgePattern
         }
 
 
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine($"Essay of {_student} on the subject of {_topic}");
             Console.WriteLine(_text);

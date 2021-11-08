@@ -5,10 +5,14 @@ using System.Text;
 
 namespace BridgePattern
 {
-    public class FAQ: IManuscript
+    public class FAQ: Manuscript
     {
         private string _subject;
         private List<string> _questions = new List<string>();
+
+        public FAQ(IFormatter formatter)
+            :base(formatter)
+        {}
 
         public FAQ SetSubject(string subject)
         {
@@ -22,7 +26,7 @@ namespace BridgePattern
             return this;
         }
 
-        public void Print()
+        public override void Print()
         {
            Console.WriteLine($"{_subject}:");
            foreach (var question in _questions)
