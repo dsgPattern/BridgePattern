@@ -34,9 +34,9 @@ namespace BridgePattern
 
         public override void Print()
         {
-            Console.WriteLine($"===== {_title} =====");
-            Console.WriteLine($"            by {_author}");
-            Console.WriteLine(_content);
+            Console.WriteLine($"===== {_formatter.Format(_title)} =====");
+            Console.WriteLine($"            by {_formatter.Format(_author)}");
+            Console.WriteLine(_formatter.Format(_content));
         }
     }
 }

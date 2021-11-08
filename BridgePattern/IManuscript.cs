@@ -6,7 +6,7 @@ namespace BridgePattern
 {
     public abstract class Manuscript
     {
-        private IFormatter _formatter;
+        protected IFormatter _formatter;
 
         protected Manuscript(IFormatter formatter)
         {

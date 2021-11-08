@@ -28,10 +28,10 @@ namespace BridgePattern
 
         public override void Print()
         {
-           Console.WriteLine($"{_subject}:");
+           Console.WriteLine($"{_formatter.Format(_subject)}:");
            foreach (var question in _questions)
            {
-               Console.WriteLine(question);
+               Console.WriteLine(_formatter.Format(question));
            }
         }
     }
